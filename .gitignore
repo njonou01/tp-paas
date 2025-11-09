@@ -1,0 +1,15 @@
+# env & secrets
+.env
+.env.local
+.env.*.local
+
+# data volumes
+infra/postgres/data/
+infra/cache-loader/data/
+
+# py build dirs
+**/__pycache__/
+**/*.pyc
+
+# docker junk
+**/.dockerignore~
