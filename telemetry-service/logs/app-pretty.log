@@ -1,0 +1,269 @@
+{"level":30,"time":1763062729242,"pid":24149,"hostname":"macbookair-1.home","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062729245,"pid":24149,"hostname":"macbookair-1.home","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763062729245,"pid":24149,"hostname":"macbookair-1.home","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","mqttDoorTopic":"doorlock","msg":"[BOOT] MQTT door topic"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763062729290,"pid":24149,"hostname":"macbookair-1.home","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763062729292,"pid":24149,"hostname":"macbookair-1.home","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763062729296,"pid":24149,"hostname":"macbookair-1.home","topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763062729298,"pid":24149,"hostname":"macbookair-1.home","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763062849068,"pid":24149,"hostname":"macbookair-1.home","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+[2025-11-13 20:44:10] INFO: ──────────────────────────────────────────────
+[2025-11-13 20:44:10] INFO: [BOOT] Telemetry Service starting...
+[2025-11-13 20:44:10] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-13 20:44:10] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-13 20:44:10] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-13 20:44:10] INFO: [BOOT] MQTT door topic
+    mqttDoorTopic: "doorlock"
+[2025-11-13 20:44:10] INFO: ──────────────────────────────────────────────
+[2025-11-13 20:44:10] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-13 20:44:10] INFO: [MQTT] Connecté au broker
+[2025-11-13 20:44:10] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-13 20:44:10] INFO: [MQTT] Abonné au topic
+    topic: "telemetry/attempts"
+[2025-11-13 20:44:10] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-13 20:44:40] INFO: [FLOW] Kafka(entrance) → MQTT(doorlock)
+    doorID: "TESTTEST"
+    badgeID: "B1"
+    action: "OPEN"
+[2025-11-13 20:44:40] INFO: [MQTT] Message publié
+    topic: "doorlock"
+    payload: "{\"doorID\":\"TESTTEST\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}"
+[2025-11-13 20:45:23] INFO: Connexion du producteur Kafka…
+    broker: "localhost:9092"
+[2025-11-13 20:45:23] INFO: Producteur Kafka connecté
+    broker: "localhost:9092"
+[2025-11-13 20:45:23] INFO: [FLOW MQTT→Kafka] Message envoyé dans Kafka
+    topic: "attemps"
+    message: {
+      "badgeID": "B1",
+      "doorID": "TESTKAFKA",
+      "timestamp": "2025-11-12T21:30:00Z"
+    }
+[2025-11-13 21:04:53] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"
+[2025-11-13 21:04:57] INFO: ──────────────────────────────────────────────
+[2025-11-13 21:04:57] INFO: [BOOT] Telemetry Service starting...
+[2025-11-13 21:04:57] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-13 21:04:57] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-13 21:04:57] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-13 21:04:57] INFO: [BOOT] MQTT door topic
+    mqttDoorTopic: "doorlock"
+[2025-11-13 21:04:57] INFO: ──────────────────────────────────────────────
+[2025-11-13 21:04:57] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-13 21:04:57] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-13 21:04:57] INFO: [MQTT] Connecté au broker
+[2025-11-13 21:04:57] INFO: [MQTT] Abonné au topic
+    topic: "telemetry/attempts"
+[2025-11-13 21:04:57] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-13 21:05:30] INFO: [FLOW] Kafka(entrance) → MQTT(doorlock)
+    doorID: "TESTTEST"
+    badgeID: "B1"
+    action: "OPEN"
+[2025-11-13 21:05:30] INFO: [MQTT] Message publié
+    topic: "doorlock"
+    payload: "{\"doorID\":\"TESTTEST\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}"
+[2025-11-13 21:05:50] INFO: Connexion du producteur Kafka…
+    broker: "localhost:9092"
+[2025-11-13 21:05:50] INFO: Producteur Kafka connecté
+    broker: "localhost:9092"
+[2025-11-13 21:05:50] INFO: [FLOW MQTT→Kafka] Message envoyé dans Kafka
+    topic: "attemps"
+    message: {
+      "badgeID": "B1",
+      "doorID": "TESTKAFKA",
+      "timestamp": "2025-11-12T21:30:00Z"
+    }
+[2025-11-14 11:43:40] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"
+[2025-11-14 11:43:41] INFO: ──────────────────────────────────────────────
+[2025-11-14 11:43:41] INFO: [BOOT] Telemetry Service starting...
+[2025-11-14 11:43:41] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-14 11:43:41] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-14 11:43:41] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-14 11:43:41] INFO: [BOOT] MQTT badge topic (wildcard)
+    mqttBadgeTopic: "iot/badgeuse/+/events"
+[2025-11-14 11:43:41] INFO: ──────────────────────────────────────────────
+[2025-11-14 11:43:41] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-14 11:43:41] INFO: [MQTT] Connecté au broker
+[2025-11-14 11:43:41] INFO: [MQTT] Abonné au topic
+    topic: "iot/badgeuse/+/events"
+[2025-11-14 11:43:41] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-14 11:43:41] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-14 11:45:25] WARN: [FLOW MQTT→Kafka] JSON invalide, message ignoré
+    error: "\"undefined\" is not valid JSON"
+[2025-11-14 11:47:36] WARN: [FLOW MQTT→Kafka] JSON invalide, message ignoré
+    error: "\"undefined\" is not valid JSON"
+[2025-11-14 11:51:52] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"
+[2025-11-14 11:51:53] INFO: ──────────────────────────────────────────────
+[2025-11-14 11:51:53] INFO: [BOOT] Telemetry Service starting...
+[2025-11-14 11:51:53] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-14 11:51:53] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-14 11:51:53] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-14 11:51:53] INFO: [BOOT] MQTT badge topic (wildcard)
+    mqttBadgeTopic: "iot/badgeuse/+/events"
+[2025-11-14 11:51:53] INFO: ──────────────────────────────────────────────
+[2025-11-14 11:51:53] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-14 11:51:53] INFO: [MQTT] Connecté au broker
+[2025-11-14 11:51:53] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-14 11:51:53] INFO: [MQTT] Abonné au topic
+    topic: "iot/badgeuse/+/events"
+[2025-11-14 11:51:53] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-14 11:52:09] INFO: [FLOW MQTT→Kafka] Reçu depuis MQTT
+    topic: "iot/badgeuse/badgeuse-entree-1/events"
+    deviceId: "badgeuse-entree-1"
+    rawMessage: "{\"badgeID\":\"B1\",\"doorID\":\"TESTKAFKA\",\"timestamp\":\"2025-11-12T21:30:00Z\"}"
+[2025-11-14 11:52:09] INFO: Connexion du producteur Kafka…
+    broker: "localhost:9092"
+[2025-11-14 11:52:09] INFO: Producteur Kafka connecté
+    broker: "localhost:9092"
+[2025-11-14 11:52:09] INFO: [FLOW MQTT→Kafka] Message envoyé dans Kafka
+    topic: "attemps"
+    message: {
+      "badgeID": "B1",
+      "doorID": "TESTKAFKA",
+      "timestamp": "2025-11-12T21:30:00Z"
+    }
+[2025-11-14 11:53:22] INFO: [FLOW MQTT→Kafka] Reçu depuis MQTT
+    topic: "iot/badgeuse/badgeuse-entree-1/events"
+    deviceId: "badgeuse-entree-1"
+    rawMessage: "{badgeID:B12345,doorID:door-entree-1,timestamp:2025-11-14T20:30:00Z}"
+[2025-11-14 11:53:22] WARN: [FLOW MQTT→Kafka] JSON invalide, message ignoré
+    rawMessage: "{badgeID:B12345,doorID:door-entree-1,timestamp:2025-11-14T20:30:00Z}"
+    error: "Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+[2025-11-14 11:57:34] INFO: [FLOW MQTT→Kafka] Reçu depuis MQTT
+    topic: "iot/badgeuse/badgeuse-entree-1/events"
+    deviceId: "badgeuse-entree-1"
+    rawMessage: "{\"badgeID\":\"B12345\",\"doorID\":\"door-entree-1\",\"timestamp\":\"2025-11-14T20:30:00Z\"}"
+[2025-11-14 11:57:34] INFO: [FLOW MQTT→Kafka] Message envoyé dans Kafka
+    topic: "attemps"
+    message: {
+      "badgeID": "B12345",
+      "doorID": "door-entree-1",
+      "timestamp": "2025-11-14T20:30:00Z"
+    }
+[2025-11-14 12:14:51] INFO: [FLOW] Kafka(entrance) → MQTT(doorlock)
+    doorID: "123TEST"
+    badgeID: "B12345"
+    action: "OPEN"
+[2025-11-14 12:14:51] INFO: [MQTT] Message publié
+    topic: "doorlock"
+    payload: "{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}"
+[2025-11-14 12:15:48] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"
+[2025-11-14 12:15:49] INFO: ──────────────────────────────────────────────
+[2025-11-14 12:15:49] INFO: [BOOT] Telemetry Service starting...
+[2025-11-14 12:15:49] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-14 12:15:49] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-14 12:15:49] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-14 12:15:49] INFO: [BOOT] MQTT topics
+    mqttBadgeTopic: "iot/badgeuse/+/events"
+    mqttDoorBase: "iot/porte"
+[2025-11-14 12:15:49] INFO: ──────────────────────────────────────────────
+[2025-11-14 12:15:49] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-14 12:15:49] INFO: [MQTT] Connecté au broker
+[2025-11-14 12:15:49] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-14 12:15:49] INFO: [MQTT] Abonné au topic
+    topic: "iot/badgeuse/+/events"
+[2025-11-14 12:15:50] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-14 12:16:16] WARN: [KAFKA] JSON invalide, message ignoré
+    raw: "\u001b[A"
+    error: "Unexpected token '\u001b', \"\u001b[A\" is not valid JSON"
+[2025-11-14 12:16:16] INFO: [FLOW] Kafka(entrance) → MQTT(porte)
+    mqttDoorTopic: "iot/porte/123TEST/events"
+    doorID: "123TEST"
+    badgeID: "B12345"
+    action: "OPEN"
+[2025-11-14 12:16:16] INFO: [MQTT] Message publié
+    topic: "iot/porte/123TEST/events"
+    payload: "{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}"
+[2025-11-14 12:16:16] WARN: [KAFKA] JSON invalide, message ignoré
+    raw: ""
+    error: "Unexpected end of JSON input"
+[2025-11-14 12:18:36] INFO: [FLOW] Kafka(entrance) → MQTT(porte)
+    mqttDoorTopic: "iot/porte/123TEST/events"
+    doorID: "123TEST"
+    badgeID: "B12345"
+    action: "OPEN"
+[2025-11-14 12:18:36] INFO: [MQTT] Message publié
+    topic: "iot/porte/123TEST/events"
+    payload: "{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}"
+[2025-11-14 12:21:59] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"
+[2025-11-14 12:22:00] INFO: ──────────────────────────────────────────────
+[2025-11-14 12:22:00] INFO: [BOOT] Telemetry Service starting...
+[2025-11-14 12:22:00] INFO: [BOOT] Kafka broker
+    kafkaBroker: "localhost:9092"
+[2025-11-14 12:22:00] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://localhost:1883"
+[2025-11-14 12:22:00] INFO: [BOOT] Kafka topics
+    topicAttempts: "attemps"
+    topicEntrance: "entrance"
+[2025-11-14 12:22:00] INFO: [BOOT] MQTT topics
+    mqttBadgeTopic: "iot/badgeuse/+/events"
+    mqttDoorBase: "iot/porte"
+[2025-11-14 12:22:00] INFO: ──────────────────────────────────────────────
+[2025-11-14 12:22:00] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://localhost:1883"
+[2025-11-14 12:22:00] INFO: [MQTT] Connecté au broker
+[2025-11-14 12:22:00] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "localhost:9092"
+[2025-11-14 12:22:00] INFO: [MQTT] Abonné au topic
+    topic: "iot/badgeuse/+/events"
+[2025-11-14 12:22:00] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
+[2025-11-14 12:22:27] INFO: [FLOW] Kafka(entrance) → MQTT(porte)
+    mqttDoorTopic: "iot/porte/123TEST/events"
+    doorID: "123TEST"
+    badgeID: "B12345"
+    action: "OPEN"
+[2025-11-14 12:22:27] INFO: [MQTT] Message publié
+    topic: "iot/porte/123TEST/events"
+    payload: "{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}"
+[2025-11-14 12:22:56] INFO: [BOOT] Signal reçu, arrêt du service…
+    signal: "SIGINT"

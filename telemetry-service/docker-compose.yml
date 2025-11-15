@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mqtt:
+    image: eclipse-mosquitto:2
+    container_name: mqtt-broker
+    ports:
+      - "1883:1883"
+    # config minimale interne à Mosquitto (optionnel si l'image a un conf par défaut)
+    command: ["mosquitto", "-c", "/mosquitto-no-auth.conf"]
+
+  telemetry-service:
+    build: .
+    container_name: telemetry-service
+    depends_on:
+      - mqtt
+    environment:
+      # MQTT dans le réseau Docker → on utilise le nom du service "mqtt"
+      MQTT_BROKER: "mqtt://mqtt:1883"
+      MQTT_TOPIC_BADGE: "iot/badgeuse/+/events"
+      MQTT_TOPIC_DOOR_BASE: "iot/porte"
+
+      # Kafka tourne en local sur ta machine (host)
+      # Sur Mac/Windows : host.docker.internal marche
+      KAFKA_BROKER: "172.31.252.16:9092"
+
+      TOPIC_ATTEMPTS: "attemps"
+      TOPIC_ENTRANCE: "entrance"
+    # Si tu veux voir les logs en live dans le terminal
+    # command: ["node", "index.js"]

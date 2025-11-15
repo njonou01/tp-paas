@@ -1,0 +1,155 @@
+{"level":30,"time":1763061752084,"groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763061752089,"topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763061755139,"doorID":"TEST2","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763061776849,"doorID":"TESTTEST","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763062021527,"broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763062021572,"msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763062021573,"groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763062021577,"topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763062021579,"topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763062050272,"doorID":"TEST2","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763062050272,"topic":"doorlock","payload":"{\"doorID\":\"TEST2\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":40,"time":1763062050273,"error":"Unexpected end of JSON input","raw":"","msg":"[KAFKA] JSON invalide, message ignoré"}
+{"level":40,"time":1763062050273,"error":"Expected ':' after property name in JSON at position 7 (line 1 column 8)","raw":"{\"test\"}","msg":"[KAFKA] JSON invalide, message ignoré"}
+{"level":30,"time":1763062268851,"msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062268852,"msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763062268852,"kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763062268852,"mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763062268852,"topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763062268852,"mqttDoorTopic":"doorlock","msg":"[BOOT] MQTT door topic"}
+{"level":30,"time":1763062268852,"msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062268852,"broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763062268901,"msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763062268903,"groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763062268906,"topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763062268909,"topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763062294426,"doorID":"TESTTEST","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763062294426,"topic":"doorlock","payload":"{\"doorID\":\"TESTTEST\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":40,"time":1763062294426,"error":"Unexpected end of JSON input","raw":"","msg":"[KAFKA] JSON invalide, message ignoré"}
+{"level":40,"time":1763062294764,"error":"Bad control character in string literal in JSON at position 20 (line 1 column 21)","rawMessage":"{\"badgeID\":\"B1\",\"doo\n> rID\":\"D1\",\"timestamp\":\"2025-11-12T21:30:00Z\"}","msg":"[FLOW MQTT→Kafka] JSON invalide, message ignoré"}
+{"level":40,"time":1763062353979,"error":"Bad control character in string literal in JSON at position 52 (line 1 column 53)","rawMessage":"{\"badgeID\":\"B1\",\"doorID\":\"TESTKAFKA\",\"timestamp\":\"20\n25-11-12T21:30:00Z\"}","msg":"[FLOW MQTT→Kafka] JSON invalide, message ignoré"}
+{"level":30,"time":1763062368762,"broker":"localhost:9092","msg":"Connexion du producteur Kafka…"}
+{"level":30,"time":1763062368769,"broker":"localhost:9092","msg":"Producteur Kafka connecté"}
+{"level":30,"time":1763062368792,"topic":"attemps","message":{"badgeID":"B1","doorID":"TESTKAFKA","timestamp":"2025-11-12T21:30:00Z"},"msg":"[FLOW MQTT→Kafka] Message envoyé dans Kafka"}
+{"level":30,"time":1763062671142,"signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763062729242,"pid":24149,"hostname":"macbookair-1.home","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062729245,"pid":24149,"hostname":"macbookair-1.home","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763062729245,"pid":24149,"hostname":"macbookair-1.home","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","mqttDoorTopic":"doorlock","msg":"[BOOT] MQTT door topic"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763062729246,"pid":24149,"hostname":"macbookair-1.home","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763062729290,"pid":24149,"hostname":"macbookair-1.home","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763062729292,"pid":24149,"hostname":"macbookair-1.home","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763062729296,"pid":24149,"hostname":"macbookair-1.home","topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763062729298,"pid":24149,"hostname":"macbookair-1.home","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763062849068,"pid":24149,"hostname":"macbookair-1.home","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763063050596,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763063050602,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763063050602,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763063050603,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763063050603,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763063050603,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","mqttDoorTopic":"doorlock","msg":"[BOOT] MQTT door topic"}
+{"level":30,"time":1763063050603,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763063050604,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763063050653,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763063050655,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763063050659,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763063050660,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763063080589,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","doorID":"TESTTEST","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763063080591,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","topic":"doorlock","payload":"{\"doorID\":\"TESTTEST\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":30,"time":1763063123955,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Connexion du producteur Kafka…"}
+{"level":30,"time":1763063123973,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Producteur Kafka connecté"}
+{"level":30,"time":1763063123995,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","topic":"attemps","message":{"badgeID":"B1","doorID":"TESTKAFKA","timestamp":"2025-11-12T21:30:00Z"},"msg":"[FLOW MQTT→Kafka] Message envoyé dans Kafka"}
+{"level":30,"time":1763064293927,"pid":32633,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763064297318,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763064297322,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763064297322,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763064297322,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763064297323,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763064297323,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","mqttDoorTopic":"doorlock","msg":"[BOOT] MQTT door topic"}
+{"level":30,"time":1763064297324,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763064297324,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763064297384,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763064297389,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763064297390,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","topic":"telemetry/attempts","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763064297391,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763064330877,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","doorID":"TESTTEST","badgeID":"B1","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763064330879,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","topic":"doorlock","payload":"{\"doorID\":\"TESTTEST\",\"badgeID\":\"B1\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-12T21:40:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":30,"time":1763064350532,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Connexion du producteur Kafka…"}
+{"level":30,"time":1763064350539,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Producteur Kafka connecté"}
+{"level":30,"time":1763064350558,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","topic":"attemps","message":{"badgeID":"B1","doorID":"TESTKAFKA","timestamp":"2025-11-12T21:30:00Z"},"msg":"[FLOW MQTT→Kafka] Message envoyé dans Kafka"}
+{"level":30,"time":1763117020870,"pid":50117,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763117021900,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763117021904,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763117021904,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763117021905,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763117021905,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763117021905,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","mqttBadgeTopic":"iot/badgeuse/+/events","msg":"[BOOT] MQTT badge topic (wildcard)"}
+{"level":30,"time":1763117021906,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763117021906,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763117021953,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763117021957,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/+/events","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763117021963,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763117021968,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":40,"time":1763117125594,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","error":"\"undefined\" is not valid JSON","msg":"[FLOW MQTT→Kafka] JSON invalide, message ignoré"}
+{"level":40,"time":1763117256831,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","error":"\"undefined\" is not valid JSON","msg":"[FLOW MQTT→Kafka] JSON invalide, message ignoré"}
+{"level":30,"time":1763117512184,"pid":46401,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763117513387,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763117513396,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763117513397,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763117513398,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763117513398,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763117513399,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","mqttBadgeTopic":"iot/badgeuse/+/events","msg":"[BOOT] MQTT badge topic (wildcard)"}
+{"level":30,"time":1763117513399,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763117513400,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763117513507,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763117513509,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763117513513,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/+/events","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763117513513,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763117529776,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/badgeuse-entree-1/events","deviceId":"badgeuse-entree-1","rawMessage":"{\"badgeID\":\"B1\",\"doorID\":\"TESTKAFKA\",\"timestamp\":\"2025-11-12T21:30:00Z\"}","msg":"[FLOW MQTT→Kafka] Reçu depuis MQTT"}
+{"level":30,"time":1763117529782,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Connexion du producteur Kafka…"}
+{"level":30,"time":1763117529792,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","broker":"localhost:9092","msg":"Producteur Kafka connecté"}
+{"level":30,"time":1763117529826,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"attemps","message":{"badgeID":"B1","doorID":"TESTKAFKA","timestamp":"2025-11-12T21:30:00Z"},"msg":"[FLOW MQTT→Kafka] Message envoyé dans Kafka"}
+{"level":30,"time":1763117602833,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/badgeuse-entree-1/events","deviceId":"badgeuse-entree-1","rawMessage":"{badgeID:B12345,doorID:door-entree-1,timestamp:2025-11-14T20:30:00Z}","msg":"[FLOW MQTT→Kafka] Reçu depuis MQTT"}
+{"level":40,"time":1763117602843,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","error":"Expected property name or '}' in JSON at position 1 (line 1 column 2)","rawMessage":"{badgeID:B12345,doorID:door-entree-1,timestamp:2025-11-14T20:30:00Z}","msg":"[FLOW MQTT→Kafka] JSON invalide, message ignoré"}
+{"level":30,"time":1763117854974,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/badgeuse-entree-1/events","deviceId":"badgeuse-entree-1","rawMessage":"{\"badgeID\":\"B12345\",\"doorID\":\"door-entree-1\",\"timestamp\":\"2025-11-14T20:30:00Z\"}","msg":"[FLOW MQTT→Kafka] Reçu depuis MQTT"}
+{"level":30,"time":1763117854996,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"attemps","message":{"badgeID":"B12345","doorID":"door-entree-1","timestamp":"2025-11-14T20:30:00Z"},"msg":"[FLOW MQTT→Kafka] Message envoyé dans Kafka"}
+{"level":30,"time":1763118891551,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","doorID":"123TEST","badgeID":"B12345","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(doorlock)"}
+{"level":30,"time":1763118891556,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","topic":"doorlock","payload":"{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":30,"time":1763118948818,"pid":58786,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763118949936,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763118949941,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763118949941,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763118949942,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763118949942,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763118949942,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","mqttBadgeTopic":"iot/badgeuse/+/events","mqttDoorBase":"iot/porte","msg":"[BOOT] MQTT topics"}
+{"level":30,"time":1763118949942,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763118949943,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763118949991,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763118949993,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763118949997,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/+/events","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763118950000,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":40,"time":1763118976695,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","error":"Unexpected token '\u001b', \"\u001b[A\" is not valid JSON","raw":"\u001b[A","msg":"[KAFKA] JSON invalide, message ignoré"}
+{"level":30,"time":1763118976696,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","mqttDoorTopic":"iot/porte/123TEST/events","doorID":"123TEST","badgeID":"B12345","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(porte)"}
+{"level":30,"time":1763118976696,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/porte/123TEST/events","payload":"{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":40,"time":1763118976696,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","error":"Unexpected end of JSON input","raw":"","msg":"[KAFKA] JSON invalide, message ignoré"}
+{"level":30,"time":1763119116721,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","mqttDoorTopic":"iot/porte/123TEST/events","doorID":"123TEST","badgeID":"B12345","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(porte)"}
+{"level":30,"time":1763119116731,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/porte/123TEST/events","payload":"{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":30,"time":1763119319162,"pid":95219,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
+{"level":30,"time":1763119320758,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763119320762,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","msg":"[BOOT] Telemetry Service starting..."}
+{"level":30,"time":1763119320763,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","kafkaBroker":"localhost:9092","msg":"[BOOT] Kafka broker"}
+{"level":30,"time":1763119320764,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","mqttBroker":"mqtt://localhost:1883","msg":"[BOOT] MQTT broker"}
+{"level":30,"time":1763119320764,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","topicAttempts":"attemps","topicEntrance":"entrance","msg":"[BOOT] Kafka topics"}
+{"level":30,"time":1763119320764,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","mqttBadgeTopic":"iot/badgeuse/+/events","mqttDoorBase":"iot/porte","msg":"[BOOT] MQTT topics"}
+{"level":30,"time":1763119320764,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","msg":"──────────────────────────────────────────────"}
+{"level":30,"time":1763119320765,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","broker":"mqtt://localhost:1883","msg":"[MQTT] Connexion au broker"}
+{"level":30,"time":1763119320822,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","msg":"[MQTT] Connecté au broker"}
+{"level":30,"time":1763119320823,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","groupId":"telemetry-service-entrance","broker":"localhost:9092","msg":"[KAFKA] Consumer \"entrance\" connecté"}
+{"level":30,"time":1763119320827,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/badgeuse/+/events","msg":"[MQTT] Abonné au topic"}
+{"level":30,"time":1763119320828,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","topic":"entrance","msg":"[KAFKA] Abonné au topic \"entrance\""}
+{"level":30,"time":1763119347008,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","mqttDoorTopic":"iot/porte/123TEST/events","doorID":"123TEST","badgeID":"B12345","action":"OPEN","msg":"[FLOW] Kafka(entrance) → MQTT(porte)"}
+{"level":30,"time":1763119347009,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","topic":"iot/porte/123TEST/events","payload":"{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}","msg":"[MQTT] Message publié"}
+{"level":30,"time":1763119376042,"pid":4858,"hostname":"MacBook-Air-de-Nawres.local","signal":"SIGINT","msg":"[BOOT] Signal reçu, arrêt du service…"}
