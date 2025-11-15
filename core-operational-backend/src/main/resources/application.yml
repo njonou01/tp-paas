@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:172.31.240.2}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:episen_tp_paas}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP:kafka:9092}
+    producer:
+      acks: all
+      retries: 3
+    consumer:
+      group-id: ${KAFKA_GROUP:core-backend}
+      auto-offset-reset: earliest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
