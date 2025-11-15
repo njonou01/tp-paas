@@ -5,6 +5,8 @@ export default {
     MQTT_BROKER: process.env.MQTT_BROKER || 'mqtt://localhost:1883',
     MQTT_TOPIC_DOORLOCK: process.env.MQTT_TOPIC_DOORLOCK || 'doorlock',
     KAFKA_BROKER: process.env.KAFKA_BROKER,
+    MQTT_USER: process.env.MQTT_USER,
+    MQTT_PASSWORD: process.env.MQTT_PASSWORD,
     TOPIC_ATTEMPTS: process.env.TOPIC_ATTEMPTS || 'attemps',
     TOPIC_ENTRANCE: process.env.TOPIC_ENTRANCE || 'entrance',
     // Topic wildcard pour toutes les badgeuses

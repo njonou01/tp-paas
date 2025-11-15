@@ -13,7 +13,6 @@ RUN npm install
 # Copier le reste du code
 COPY . .
 
-ENV NODE_ENV=production
 
 # Démarrage
 CMD ["node", "index.js"]

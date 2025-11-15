@@ -8,17 +8,39 @@ import logger from '../utils/logger.js';
 let client; // Singleton : une seule connexion MQTT pour tout le service
 
 /**
+ * Construit les options de connexion MQTT (auth incluse si présente)
+ */
+function buildMqttOptions() {
+    const options = {
+        reconnectPeriod: 2000,  // tente une reconnexion toutes les 2s
+        connectTimeout: 10_000, // délai max avant timeout
+    };
+
+    if (env.MQTT_USER && env.MQTT_PASSWORD) {
+        options.username = env.MQTT_USER;
+        options.password = env.MQTT_PASSWORD;
+        logger.info(
+            { username: env.MQTT_USER },
+            '[MQTT] Auth activée (username/password)'
+        );
+    } else {
+        logger.warn('[MQTT] Aucune auth configurée (MQTT_USER/MQTT_PASSWORD absents)');
+    }
+
+    return options;
+}
+
+/**
  * Connexion MQTT (réutilisable pour subscribe OU publish)
  */
 export function connectMqtt() {
     if (client) return client;
 
+    const options = buildMqttOptions();
+
     logger.info({ broker: env.MQTT_BROKER }, '[MQTT] Connexion au broker');
 
-    client = mqtt.connect(env.MQTT_BROKER, {
-        reconnectPeriod: 2000,  // tente une reconnexion toutes les 2s
-        connectTimeout: 10_000, // délai max avant timeout
-    });
+    client = mqtt.connect(env.MQTT_BROKER, options);
 
     // Événements MQTT
     client.on('connect', () => {
@@ -67,7 +89,7 @@ export function startMqtt(onMessage, topic = env.MQTT_TOPIC_BADGE) {
         try {
             // extraction du device_id depuis le topic iot/badgeuse/{device_id}/events
             const parts = t.split('/');
-            const deviceId = parts[2]; // "badgeuse-entrance-1" par ex.
+            const deviceId = parts[2]; // "badgeuse-entree-1" par ex.
 
             onMessage({ topic: t, deviceId, message });
         } catch (e) {
@@ -103,6 +125,7 @@ export function publishMqtt(topic, messageObj) {
         }
     });
 }
+
 export function buildDoorTopic(doorId) {
     return `${env.MQTT_TOPIC_DOOR_BASE}/${doorId}/events`;
 }
