@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  cache-loader:
+    build:
+      context: ./cache-loader
+      dockerfile: Dockerfile
+    container_name: cache-loader
+    env_file:
+      - .env
+    volumes:
+      - ./cache-loader/data:/data
+    restart: unless-stopped
