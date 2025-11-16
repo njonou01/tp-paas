@@ -4,17 +4,29 @@ server:
 spring:
   data:
     redis:
-      host: ${REDIS_HOST:172.31.240.2}
+      host: ${REDIS_HOST:172.31.252.35}
       port: ${REDIS_PORT:6379}
       password: ${REDIS_PASSWORD:episen_tp_paas}
+
   kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP:kafka:9092}
-    producer:
-      acks: all
-      retries: 3
-    consumer:
-      group-id: ${KAFKA_GROUP:core-backend}
-      auto-offset-reset: earliest
+      bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+      consumer:
+        group-id: core-operational-backend
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+        properties:
+          spring.json.value.default.type: fr.upec.episen.core_operational_backend.messaging.TelemetryEvent
+          spring.json.trusted.packages: fr.upec.episen.core_operational_backend.messaging
+      producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+        acks: all
+
+app:
+  topics:
+    in: ${TOPIC_IN:attempts}
+    out: ${TOPIC_OUT:entrance}
+    logs: ${TOPIC_LOGS:logs}
 
 management:
   endpoints:
