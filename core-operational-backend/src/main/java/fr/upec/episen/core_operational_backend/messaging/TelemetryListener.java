@@ -33,9 +33,9 @@ public class TelemetryListener {
 
             if (isRegistered) {
                 decisionPublisher.publishAllowed(badgeId, doorId);
-            }/* else {
+            } else {
                 decisionPublisher.publishRejected(badgeId, doorId);
-            }*/
+            }
 
         } catch (Exception e) {
             logger.error("Erreur pendant le traitement du message telemetry pour badge {}", badgeId, e);
