@@ -5,7 +5,9 @@ services:
     build: .
     container_name: telemetry-service
     environment:
-      MQTT_BROKER: "mqtt://172.31.252.161:1883"
+      NODE_ENV: "production"
+
+      MQTT_BROKER: "mqtt://172.31.253.71:1883"
       MQTT_USER: "toto"
       MQTT_PASSWORD: "toto"
 
@@ -15,5 +17,6 @@ services:
       KAFKA_BROKER: "172.31.252.16:9092"
       TOPIC_ATTEMPTS: "attempts"
       TOPIC_ENTRANCE: "entrance"
+      TOPIC_LOGS: "logs"
     command: ["node", "index.js"]
     restart: unless-stopped

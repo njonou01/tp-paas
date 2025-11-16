@@ -13,3 +13,5 @@ infra/cache-loader/data/
 
 # docker junk
 **/.dockerignore~
+
+telemetry-service/node_modules

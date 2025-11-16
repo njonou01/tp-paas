@@ -60,6 +60,22 @@ export async function sendToKafka(messageObj) {
         logger.debug(
             { topic: env.TOPIC_ATTEMPTS, payload: messageObj }, 'Message envoyé à Kafka');
 
+        // 2) Envoi dans log
+        await p.send({
+            topic: env.TOPIC_LOGS, // ajoute TOPIC_LOG dans ton .env
+            messages: [
+                {
+                    value: json,
+                    headers: { source: "attempts" },
+                },
+            ],
+        });
+
+        logger.debug(
+            { topic: env.TOPIC_LOGS, payload: messageObj },
+            'Message forwardé dans le topic log'
+        );
+
     } catch (err) {
         logger.error(
             { error: err.message, topic: env.TOPIC_ATTEMPTS },

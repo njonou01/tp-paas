@@ -267,3 +267,28 @@
     payload: "{\"doorID\":\"123TEST\",\"badgeID\":\"B12345\",\"action\":\"OPEN\",\"timestamp\":\"2025-11-14T22:00:00Z\"}"
 [2025-11-14 12:22:56] INFO: [BOOT] Signal reçu, arrêt du service…
     signal: "SIGINT"
+[2025-11-16 14:41:26] INFO: ──────────────────────────────────────────────
+[2025-11-16 14:41:26] INFO: [BOOT] Telemetry Service starting...
+[2025-11-16 14:41:26] INFO: [BOOT] Kafka broker
+    kafkaBroker: "172.31.252.16:9092"
+[2025-11-16 14:41:26] INFO: [BOOT] MQTT broker
+    mqttBroker: "mqtt://172.31.253.71:1883"
+[2025-11-16 14:41:26] INFO: [BOOT] Kafka topics
+    topicAttempts: "attempts"
+    topicEntrance: "entrance"
+[2025-11-16 14:41:26] INFO: [BOOT] MQTT topics
+    mqttBadgeTopic: "iot/badgeuse/+/events"
+    mqttDoorBase: "iot/porte"
+[2025-11-16 14:41:26] INFO: ──────────────────────────────────────────────
+[2025-11-16 14:41:26] INFO: [MQTT] Auth activée (username/password)
+    username: "toto"
+[2025-11-16 14:41:26] INFO: [MQTT] Connexion au broker
+    broker: "mqtt://172.31.253.71:1883"
+[2025-11-16 14:41:26] INFO: [MQTT] Connecté au broker
+[2025-11-16 14:41:26] INFO: [KAFKA] Consumer "entrance" connecté
+    groupId: "telemetry-service-entrance"
+    broker: "172.31.252.16:9092"
+[2025-11-16 14:41:26] INFO: [MQTT] Abonné au topic
+    topic: "iot/badgeuse/+/events"
+[2025-11-16 14:41:26] INFO: [KAFKA] Abonné au topic "entrance"
+    topic: "entrance"
