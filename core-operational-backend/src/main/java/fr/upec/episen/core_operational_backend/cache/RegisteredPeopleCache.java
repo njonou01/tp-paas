@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegisteredPeopleCache {
-    private static final String REGISTERED_SET = "set:registered_people";
+    private static final String REGISTERED_SET = "badges:active";
     private final StringRedisTemplate redis;
 
     public RegisteredPeopleCache(StringRedisTemplate redis) {
